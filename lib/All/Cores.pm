@@ -19,7 +19,7 @@ e<!--- # NOTE: Use the below to generate the README.md doc file for github:-  (p
 
     my $mp = new All::Cores();
 
-    sub long_process { my($n)=@_; sleep(2); %result=(pid=>$$,reply=>"Hello mummy, from child $n");return \%result; }
+    sub long_process { my($n)=@_; sleep(2); my %result=(pid=>$$,reply=>"Hello mummy, from child $n");return \%result; }
 
     foreach my $work (1..100) { 
       $mp->run(\&long_process,$work);	# forks() internally; on 24cpus, will block on work=25 until one of the children is done
