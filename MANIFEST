@@ -1,0 +1,11 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+README.md
+t/All-Cores.t
+lib/All/Cores.pm
+examples/test_all_cores.pl
+cpanfile
+.gitignore
+LICENSE

@@ -1,0 +1,6 @@
+Revision history for Perl extension All::Cores
+
+1.01  Wed Aug 14 18:33:33 2019
+	- original version; created by h2xs 1.23 with options
+		-AX -n All::Cores
+

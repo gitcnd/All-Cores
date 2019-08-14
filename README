@@ -1,0 +1,32 @@
+All-Cores version 1.01
+======================
+
+Pure-perl module making it really easy to use all the cores on your CPU to parallel-process large amounts of data, collecting all the results into the parent process.
+
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+See the README.md
+
+  
+COPYRIGHT AND LICENCE
+
+                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+Copyright (C) 2019 by Chris Drake <cdrake@cpan.org>. [gitcnd]
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.18.2 or,
+at your option, any later version of Perl 5 you may have available.
+
+
