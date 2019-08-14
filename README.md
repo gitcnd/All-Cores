@@ -92,7 +92,7 @@ While waiting for a lock, code can be executed inside the waiting loop.
 
 # AUTHOR
 
-This module was written by Chris Drake `cdrake@cpan.org`. [\[gitcnd\](https://github.com/gitcnd)\]
+This module was written by Chris Drake `cdrake@cpan.org`. \[[gitcnd](https://github.com/gitcnd)\]
 
 # COPYRIGHT AND LICENSE
 
