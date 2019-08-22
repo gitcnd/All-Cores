@@ -14,7 +14,7 @@ All::Cores - Pure-perl module making it really easy to use all the cores on your
 
     my $mp = new All::Cores();
 
-    sub long_process { my($n)=@_; sleep(2); %result=(pid=>$$,reply=>"Hello mummy, from child $n");return \%result; }
+    sub long_process { my($n)=@_; sleep(2); my %result=(pid=>$$,reply=>"Hello mummy, from child $n");return \%result; }
 
     foreach my $work (1..100) { 
       $mp->run(\&long_process,$work);   # forks() internally; on 24cpus, will block on work=25 until one of the children is done
@@ -66,6 +66,14 @@ Usage is
 
 Note that we use JSON to encode those results and they get moved over an IPC socket to the parent process - so don't return anything that cannot be serialized.
 
+## cpu\_count
+
+Returns how many CPU cores are available
+
+Usage is
+
+    print $mp->cpu_count();
+
 ## peek\_results
 
 Look at partial results from children who have finished now
@@ -74,7 +82,7 @@ Usage is
 
     my $sneaky=$mp->peek_results();     # Peek into the result array as it gets built
 
-Note that $mp->run(\\&long_process); will block when all CPUs are busy, so you only get to peek at results when any child exists
+Note that $mp->run(\\&long_process); will block when all CPUs are busy, so you only get to peek at results when any child exits
 
 It is safe to "pop" results off this - e.g. - to save to disk or whatever, thus making room in memory for long-running data stuff
 

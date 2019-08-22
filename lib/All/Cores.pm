@@ -291,7 +291,7 @@ __END__
 
 =head1 AUTHOR
 
-This module was written by Chris Drake F<cdrake@cpan.org>. e[[gitcnd](https://github.com/gitcnd)]
+This module was written by Chris Drake F<cdrake@cpan.org>. [e[gitcnde](https://github.com/gitcnd)]
 
 
 =head1 COPYRIGHT AND LICENSE
