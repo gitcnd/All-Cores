@@ -47,7 +47,7 @@ None by default.
 require Exporter;
 
 our @ISA = qw(Exporter);
-our($VERSION)='1.01';
+our($VERSION)='1.02';
 our($UntarError) = '';
 
 our %EXPORT_TAGS = ( 'all' => [ qw( ) ] );
@@ -180,6 +180,26 @@ sub results {
 
 ################################################################################
 
+=head2 cpu_count
+
+Returns how many CPU cores are available
+
+Usage is
+
+    print $mp->cpu_count();
+
+=cut
+
+sub cpu_count {
+  my $this = shift;
+  return $this->{ncpus}
+} # 
+
+
+
+
+################################################################################
+
 =head2 peek_results
 
 Look at partial results from children who have finished now
@@ -188,7 +208,7 @@ Usage is
 
     my $sneaky=$mp->peek_results();	# Peek into the result array as it gets built
 
-Note that $mp->run(\&longe_process); will block when all CPUs are busy, so you only get to peek at results when any child exists
+Note that $mp->run(\&longe_process); will block when all CPUs are busy, so you only get to peek at results when any child exits
 
 It is safe to "pop" results off this - e.g. - to save to disk or whatever, thus making room in memory for long-running data stuff
 
